@@ -1,1 +1,1 @@
-export { HelloWorld } from './HelloWorld.ts'
+export { HelloWorld } from './HelloWorld.ts';
