@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "lib": ["deno.window"],
+    "strict": true
+  },
+  "lint": {
+    "include": ["src/"],
+    "exclude": ["src/testdata/", "data/fixtures/**/*.ts"],
+    "rules": {
+      "tags": ["recommended"],
+      "include": ["ban-untagged-todo"],
+      "exclude": ["no-unused-vars"]
+    }
+  },
+  "fmt": {
+    "useTabs": true,
+    "lineWidth": 80,
+    "indentWidth": 4,
+    "semiColons": false,
+    "singleQuote": true,
+    "proseWrap": "preserve",
+    "include": ["src/"],
+    "exclude": ["src/testdata/", "data/fixtures/**/*.ts"]
+  },
+  "lock": false,
+  "nodeModulesDir": true,
+  "test": {
+    "include": ["src/"],
+    "exclude": ["src/testdata/", "data/fixtures/**/*.ts"]
+  },
+  "tasks": {
+    "start": "deno run --allow-env --env src/main.ts",
+    "dev": "deno run --watch --allow-env --env src/main.ts",
+    "test_unit": "deno test tests/unit",
+    "test_feature": "deno test tests/feature",
+    "test": "deno task test_unit && deno task test_feature"
+
+  },
+  "imports": {       
+     "assert": "https://deno.land/std@0.212.0/assert/mod.ts"      
+  }
+}
+
